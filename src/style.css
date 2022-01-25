@@ -48,7 +48,7 @@ aside {
     background: #222521;
     color: #fff;
     height: 100vh;
-    width: 10%;
+    width: 15%;
 }
 
 aside h4 {
@@ -67,5 +67,33 @@ aside h4 {
 
 .main-content {
     background: rgb(177, 175, 175);
-    width: 90%;
+    width: 85%;
 }
+
+/* ---------- */
+/* Generate Report Component */
+/* ---------- */
+
+.generate-report-component {
+    background: #fff;
+    padding: 1em;
+}
+
+.generate-report-component form {
+    width: 50%;
+}
+
+.generate-report-content {
+    display: flex;
+    padding: 1em;
+}
+
+.date-picker {
+    display: flex;
+    margin: 0;
+}
+
+.endDateInput {
+    margin-left: 10px;
+}
+
