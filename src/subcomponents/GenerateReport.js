@@ -1,17 +1,20 @@
+import { useContext } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import useGenerateReport from '../hooks/useGenerateReport'
+import { ReportContext } from '../context/reportContext'
 
 export default function GenerateReport() {
-    const { 
-        reportType, 
+    const {
         startDate, 
         endDate, 
         setStartDate, 
-        setEndDate, 
-        handleChange,
+        setEndDate,
         resultData,  
     } = useGenerateReport()
+    const {reportType, handleChange} = useContext(ReportContext)
+
+    console.log(reportType)
 
     return (
         <section className='generate-report-component'>

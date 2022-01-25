@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Dashboard from './components/Dashboard'
 import MainContent from './components/MainContent'
 import './style.css'
+import {ReportContextProvider} from './context/reportContext'
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
 
       <main>
         <Dashboard />
-        <MainContent />
+        <ReportContextProvider>
+          <MainContent />
+        </ReportContextProvider>
       </main>
     </>
   );
