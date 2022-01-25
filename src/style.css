@@ -92,6 +92,10 @@ aside h4 {
     width: 50%;
 }
 
+.generate-report-component label {
+    font-weight: bold;
+}
+
 .generate-report-content {
     display: flex;
     padding: 1em .3em;
@@ -104,10 +108,6 @@ aside h4 {
 
 .endDateInput {
     margin-left: 10px;
-}
-
-.generate-report-component label {
-    font-weight: bold;
 }
 
 .generate-report-form select {

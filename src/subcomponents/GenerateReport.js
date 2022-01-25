@@ -9,7 +9,8 @@ export default function GenerateReport() {
         endDate, 
         setStartDate, 
         setEndDate, 
-        handleChange,  
+        handleChange,
+        resultData,  
     } = useGenerateReport()
 
     return (

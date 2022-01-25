@@ -40,7 +40,5 @@ export default function useGenerateReport() {
         }
     }, [startDate, endDate])
 
-    console.log(resultData)
-
-    return { reportType, startDate, endDate, setStartDate, setEndDate, handleChange,  }
+    return { reportType, startDate, endDate, setStartDate, setEndDate, handleChange, resultData }
 }
