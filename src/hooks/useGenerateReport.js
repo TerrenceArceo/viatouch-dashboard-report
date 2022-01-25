@@ -5,6 +5,7 @@ export default function useGenerateReport() {
     const [reportType, setReportType] = useState('')
     const [startDate, setStartDate] = useState(null)
     const [endDate, setEndDate] = useState(null)
+    const [resultData, setResultData] = useState([])
 
     function handleChange(event) {
         const { value } = event.target
@@ -33,10 +34,13 @@ export default function useGenerateReport() {
                 }
             })
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    setResultData(data)
+                })
         }
     }, [startDate, endDate])
 
+    console.log(resultData)
 
     return { reportType, startDate, endDate, setStartDate, setEndDate, handleChange,  }
 }
