@@ -10,6 +10,8 @@
 
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 img {
@@ -28,4 +30,42 @@ img {
 header {
     background: #222521;
     padding: 1em ;
+}
+
+/* ---------- */
+/* Main  */
+/* ---------- */
+
+main {
+    display: flex;
+}
+
+/* ---------- */
+/* Aside  */
+/* ---------- */
+
+aside {
+    background: #222521;
+    color: #fff;
+    height: 100vh;
+    width: 10%;
+}
+
+aside h4 {
+    margin: 0;
+    padding: 2em 1em;
+}
+
+.version {
+    font-size: 12px;
+    padding: 0 1.4em;
+}
+
+/* ---------- */
+/* MainContent  */
+/* ---------- */
+
+.main-content {
+    background: rgb(177, 175, 175);
+    width: 90%;
 }
