@@ -140,3 +140,15 @@ aside h4 {
 .report-button:focus {
     opacity: .8;
 }
+
+/* ---------- */
+/* Financial report section */
+/* ---------- */
+
+.financial-report-section {
+    background: #fff;
+    margin: 10px 35px;
+    border-radius: 8px;
+    height: 42%;
+    padding: .5em .8em;
+}

@@ -14,8 +14,6 @@ export default function GenerateReport() {
     } = useGenerateReport()
     const {reportType, handleChange} = useContext(ReportContext)
 
-    console.log(reportType)
-
     return (
         <section className='generate-report-component'>
             <h1>Generate Report</h1>
