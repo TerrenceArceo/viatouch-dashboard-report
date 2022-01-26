@@ -10,7 +10,8 @@ export default function GenerateReport() {
         endDate, 
         setStartDate, 
         setEndDate,
-        resultData,  
+        resultData,
+        getData,
     } = useGenerateReport()
     const {reportType, handleChange} = useContext(ReportContext)
 
@@ -18,7 +19,7 @@ export default function GenerateReport() {
         <section className='generate-report-component'>
             <h1>Generate Report</h1>
             <div className='generate-report-content'>
-                <form className='generate-report-form'>
+                <div className='generate-report-form'>
                     <label htmlFor='dropdown'>Report Type</label>
                     <br />
                     <select
@@ -32,8 +33,8 @@ export default function GenerateReport() {
                         <option value="financialSummary">Financial Summary</option>
                     </select>
                     <br />
-                    <button className='report-button'>Create Report</button>
-                </form>
+                    <button className='report-button' onClick={() => getData()}>Create Report</button>
+                </div>
                 <div className='date-section'>
                     <label htmlFor='date-pick'>Custom Time Range</label>
                     <div className='date-picker' id='date-picker' >
