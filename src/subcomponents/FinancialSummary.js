@@ -1,8 +1,9 @@
-import { useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { ReportContext } from "../context/reportContext"
+import Table from './Table'
 
 export default function FinancialReport() {
-    const { reportType } = useContext(ReportContext)
+    const { reportType, getData, resultData, confirm } = useContext(ReportContext)
     const date = new Date()
     const year = date.getFullYear()
     const month = date.getMonth() + 1
@@ -14,6 +15,7 @@ export default function FinancialReport() {
                     <div>
                         <h2 style={{marginBottom: 0, fontWeight: 'lighter'}}>Financial Report</h2>
                         <p style={{marginTop: 0}}>{`Date: ${month}/${day}/${year}`}</p>
+                        {confirm && <Table /> }
                     </div>
                 ) : null
             }
@@ -21,5 +23,6 @@ export default function FinancialReport() {
     )
 }
 
-//Check reportType's value. if it's equal to financialSummary, render the title, today's date.
-//Once the dates were filled, and create report button is pressed, render the table
+// Get resultData from context
+// Map through it
+// each itiration will be 

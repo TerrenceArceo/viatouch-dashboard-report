@@ -15,8 +15,6 @@ export default function GenerateReport() {
         setStartDate 
     } = useContext(ReportContext)
 
-    console.log(resultData)
-
     return (
         <section className='generate-report-component'>
             <h1>Generate Report</h1>
@@ -35,7 +33,7 @@ export default function GenerateReport() {
                         <option value="financialSummary">Financial Summary</option>
                     </select>
                     <br />
-                    <button className='report-button' onClick={() => getData()}>Create Report</button>
+                    <button className='report-button' onClick={getData}>Create Report</button>
                 </div>
                 <div className='date-section'>
                     <label htmlFor='date-pick'>Custom Time Range</label>
@@ -45,12 +43,14 @@ export default function GenerateReport() {
                             onChange={date => setStartDate(date)}
                             className='startDateInput'
                             dateFormat="yyyy-MM-dd"
+                            placeholderText='Select Start Date'
                         />
                         <DatePicker 
                             selected={endDate}
                             onChange={date => setEndDate(date)}
                             className='endDateInput'
                             dateFormat="yyyy-MM-dd"
+                            placeholderText='Select End Date'
                         />
                     </div>
                 </div>
