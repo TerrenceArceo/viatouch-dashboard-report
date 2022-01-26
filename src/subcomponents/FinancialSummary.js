@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import useGenerateReport from "../hooks/useGenerateReport"
 import { ReportContext } from "../context/reportContext"
 
 export default function FinancialReport() {
