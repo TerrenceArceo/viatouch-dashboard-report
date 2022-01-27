@@ -25,7 +25,7 @@ function App() {
         </ReportContextProvider>
 
         <Routes>
-            <Route path="/"  element={<ReportContextProvider><MainContent /></ReportContextProvider>} />
+            <Route path="/" basename={process.env.PUBLIC_URL}  element={<ReportContextProvider><MainContent /></ReportContextProvider>} />
             <Route path="/machine" element={<Machine />} />
             <Route path="/location" element={<Location />} />
             <Route path="/management" element={<Management />} />
