@@ -12,17 +12,21 @@ import Management from './dummyComponents/Management'
 import Products from './dummyComponents/Products'
 import UserManagement from './dummyComponents/UserManagement'
 import Media from './dummyComponents/Media'
+import {useEffect, useState} from 'react'
 
 function App() {
+
   return (
     <>
       <Header />
 
       <main>
-        <Dashboard />
+        <ReportContextProvider>
+          <Dashboard  />
+        </ReportContextProvider>
 
         <Routes>
-            <Route path="/" element={<ReportContextProvider><MainContent /></ReportContextProvider>} />
+            <Route path="/"  element={<ReportContextProvider><MainContent /></ReportContextProvider>} />
             <Route path="/machine" element={<Machine />} />
             <Route path="/location" element={<Location />} />
             <Route path="/management" element={<Management />} />
