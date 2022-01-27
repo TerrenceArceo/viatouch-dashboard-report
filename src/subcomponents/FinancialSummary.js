@@ -1,9 +1,9 @@
-import { useState, useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { ReportContext } from "../context/reportContext"
 import Table from './Table'
 
 export default function FinancialReport() {
-    const { reportType, getData, resultData, confirm } = useContext(ReportContext)
+    const { reportType, resultData, confirm } = useContext(ReportContext)
     const date = new Date()
     const year = date.getFullYear()
     const month = date.getMonth() + 1
@@ -15,7 +15,7 @@ export default function FinancialReport() {
                     <div>
                         <h2 style={{marginBottom: 0, fontWeight: 'lighter'}}>Financial Report</h2>
                         <p style={{marginTop: 0}}>{`Date: ${month}/${day}/${year}`}</p>
-                        {confirm && <Table /> }
+                        {confirm === true && resultData !== undefined ? <Table /> : null}
                     </div>
                 ) : null
             }

@@ -9,6 +9,40 @@ function ReportContextProvider(props) {
     const [endDate, setEndDate] = useState(null)
     const [resultData, setResultData] = useState()
     const [confirm, setConfirm] = useState(false)
+    const [timeRange, setTimeRange] = useState('')
+
+    function timeRangeSetUp() {
+        const date = new Date()
+        const year = date.getFullYear()
+        const month = date.getMonth() + 1
+        const day = date.getDate()
+
+        if (timeRange === 'today') {
+            setStartDate(date)
+            setEndDate(date)
+        } else if (timeRange === 'yesterday') {
+            setStartDate(date)
+            setEndDate(`${year}-${month}-${day - 1}`)
+        }
+    }
+
+    function handleTimeRange(event) {
+        const { value } = event.target
+        
+        if (value === '') {
+            setTimeRange('')
+        } else if (value === 'today') {
+            setTimeRange('today')
+        } else if (value === 'yesterday') {
+            setTimeRange('yesterday')
+        } else if (value === 'oneweek') {
+            setTimeRange('oneweek')
+        } else if (value === 'sixmonths' ) {
+            setTimeRange('sixmonths')
+        } else if (value === 'oneyear') {
+            setTimeRange('oneyear')
+        }
+    }
 
     function handleChange(event) {
         const { value } = event.target
@@ -59,7 +93,9 @@ function ReportContextProvider(props) {
             setStartDate: setStartDate,
             setEndDate: setEndDate,
             getData: getData,
-            confirm: confirm
+            confirm: confirm,
+            handleTimeRange: handleTimeRange,
+            timeRange: timeRange
         }}>
             {props.children}
         </ReportContext.Provider>

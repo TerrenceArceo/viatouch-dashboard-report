@@ -49,11 +49,21 @@ aside {
     color: #fff;
     height: 100vh;
     width: 15%;
+    display: flex;
+    flex-direction: column;
 }
 
-aside h4 {
-    margin: 0;
-    padding: 2em 1em;
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1.5em;
+    transition: 100ms ease-in-out;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #82C141;
 }
 
 .version {

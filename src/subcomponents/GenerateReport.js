@@ -5,14 +5,15 @@ import { ReportContext } from '../context/reportContext'
 
 export default function GenerateReport() {
     const { 
-        getData, 
-        resultData, 
+        getData,
         setEndDate, 
         endDate, 
         reportType, 
         handleChange, 
         startDate, 
-        setStartDate 
+        setStartDate,
+        handleTimeRange,
+        timeRange,
     } = useContext(ReportContext)
 
     return (
@@ -52,6 +53,18 @@ export default function GenerateReport() {
                             dateFormat="yyyy-MM-dd"
                             placeholderText='Select End Date'
                         />
+                        <select
+                            value={timeRange}
+                            name='timeRange'
+                            onChange={handleTimeRange}
+                        >
+                            <option value=""></option>
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="oneweek">One Week</option>
+                            <option value="sixmonths">Six Months</option>
+                            <option value="oneyear">One Year</option>
+                        </select>
                     </div>
                 </div>
             </div>

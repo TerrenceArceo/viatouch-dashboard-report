@@ -1,13 +1,15 @@
+import {Link} from 'react-router-dom'
+
 export default function Dashboard() {
     return (
         <aside>
-            <h4>Machine</h4>
-            <h4>Location</h4>
-            <h4>Products</h4>
-            <h4>Reports</h4>
-            <h4>Media</h4>
-            <h4>User Management</h4>
-            <h4>Logout</h4>
+            <Link to="/machine">Machine</Link>
+            <Link to="/location">Location</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/">Reports</Link>
+            <Link to="/media">Media</Link>
+            <Link to="/usermanagement">User Management</Link>
+            <Link to="/logout">Logout</Link>
 
             <p className="version">Version 1.6.32</p>
         </aside>
