@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { format } from 'date-fns'
+import { format, parseISO, subDays, subMonths, subYears } from 'date-fns'
 
 const ReportContext = React.createContext()
 
@@ -11,38 +11,43 @@ function ReportContextProvider(props) {
     const [confirm, setConfirm] = useState(false)
     const [timeRange, setTimeRange] = useState('')
 
-    function timeRangeSetUp() {
-        const date = new Date()
-        const year = date.getFullYear()
-        const month = date.getMonth() + 1
-        const day = date.getDate()
-
-        if (timeRange === 'today') {
-            setStartDate(date)
-            setEndDate(date)
-        } else if (timeRange === 'yesterday') {
-            setStartDate(date)
-            setEndDate(`${year}-${month}-${day - 1}`)
-        }
-    }
+    const date = new Date()
+    const dateFormat = format(date, 'yyyy-MM-dd')
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
 
     function handleTimeRange(event) {
         const { value } = event.target
+        setTimeRange(value)
+        setConfirm(false)
+
         
         if (value === '') {
             setTimeRange('')
         } else if (value === 'today') {
             setTimeRange('today')
+            setStartDate(date)
+            setEndDate(date)
         } else if (value === 'yesterday') {
             setTimeRange('yesterday')
+            setEndDate(date)
+            setStartDate(subDays(new Date(), 1))
         } else if (value === 'oneweek') {
             setTimeRange('oneweek')
+            setEndDate(date)
+            setStartDate(subDays(new Date(), 8))
         } else if (value === 'sixmonths' ) {
             setTimeRange('sixmonths')
+            setEndDate(date)
+            setStartDate(subMonths(new Date(), 6))
         } else if (value === 'oneyear') {
             setTimeRange('oneyear')
+            setEndDate(date)
+            setStartDate(subYears(new Date(), 1))
         }
     }
+
 
     function handleChange(event) {
         const { value } = event.target

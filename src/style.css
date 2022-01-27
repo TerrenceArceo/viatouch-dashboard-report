@@ -132,7 +132,14 @@ a:active {
 .date-section {
     margin-left: 20px;
     margin-top: -5px;
+}
 
+.quick-select {
+    background-color: rgb(243, 240, 240);
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: .3em .3em;
 }
 
 .report-button {

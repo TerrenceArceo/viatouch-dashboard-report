@@ -12,7 +12,6 @@ import Management from './dummyComponents/Management'
 import Products from './dummyComponents/Products'
 import UserManagement from './dummyComponents/UserManagement'
 import Media from './dummyComponents/Media'
-import {useEffect, useState} from 'react'
 
 function App() {
 
