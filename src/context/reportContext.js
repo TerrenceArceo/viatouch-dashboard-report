@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { format, parseISO, subDays, subMonths, subYears } from 'date-fns'
+import { format, subDays, subMonths, subYears } from 'date-fns'
 
 const ReportContext = React.createContext()
 
@@ -12,10 +12,6 @@ function ReportContextProvider(props) {
     const [timeRange, setTimeRange] = useState('')
 
     const date = new Date()
-    const dateFormat = format(date, 'yyyy-MM-dd')
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
 
     function handleTimeRange(event) {
         const { value } = event.target
