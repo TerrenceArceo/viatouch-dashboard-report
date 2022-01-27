@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/viatouch-dashboard-report/static/css/main.a7b8da00.css",
+    "main.js": "/viatouch-dashboard-report/static/js/main.73518ff1.js",
+    "static/media/viatouch_logo_white.png": "/viatouch-dashboard-report/static/media/viatouch_logo_white.cc4be1e08e11e7b39104.png",
+    "index.html": "/viatouch-dashboard-report/index.html",
+    "main.a7b8da00.css.map": "/viatouch-dashboard-report/static/css/main.a7b8da00.css.map",
+    "main.73518ff1.js.map": "/viatouch-dashboard-report/static/js/main.73518ff1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7b8da00.css",
+    "static/js/main.73518ff1.js"
+  ]
+}
